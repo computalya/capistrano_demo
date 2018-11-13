@@ -11,7 +11,6 @@ set :puma_workers,    0
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
 set :deploy_to, "/var/www/capistrano_demo"
 
 # Default value for :format is :airbrussh.
@@ -25,7 +24,8 @@ set :deploy_to, "/var/www/capistrano_demo"
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "config/database.yml"
+# append :linked_files, "config/database.yml"
+set :linked_files, %w{config/master.key}
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
